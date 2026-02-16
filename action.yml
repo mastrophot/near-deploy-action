@@ -1,0 +1,22 @@
+name: "NEAR Contract Deploy"
+description: "Deploy a smart contract to NEAR Protocol"
+inputs:
+  account_id:
+    description: "The NEAR account ID to deploy to"
+    required: true
+  private_key:
+    description: "The private key for the account"
+    required: true
+  contract_path:
+    description: "Path to the compiled .wasm contract"
+    required: true
+  network:
+    description: "NEAR network (mainnet or testnet)"
+    required: false
+    default: "testnet"
+outputs:
+  transaction_hash:
+    description: "The hash of the deployment transaction"
+runs:
+  using: "node20"
+  main: "dist/index.js"
